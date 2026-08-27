@@ -13,11 +13,11 @@ IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tif", ".tiff"}
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".avi", ".mkv", ".webm"}
 
 STRATA = (
-    ("arcface", "ArcFace-Embedding", 0.58),
-    ("geometry", "Landmark-Geometrie", 0.12),
-    ("lbp", "Textur (LBP)", 0.12),
-    ("hog", "Gradient (HOG)", 0.12),
-    ("color", "Farb-Signatur", 0.06),
+    ("arcface", "ArcFace-Embedding", 0.78),
+    ("geometry", "Landmark-Geometrie", 0.05),
+    ("lbp", "Textur (LBP)", 0.05),
+    ("hog", "Gradient (HOG)", 0.08),
+    ("color", "Farb-Signatur", 0.04),
 )
 
 
@@ -290,16 +290,26 @@ def score_pair(probe: FaceRecord, proto: dict[str, np.ndarray]) -> list[StratumS
 
 
 def fuse(strata: Iterable[StratumScore], quality: float) -> float:
-    weights = {k: w for k, _, w in STRATA}
-    num = den = 0.0
+    net = 0.0
+    appearance = 0.0
+    den = 0.0
     for s in strata:
-        w = weights.get(s.id, 0.0)
+        if s.id == "arcface":
+            net = s.percent
+            continue
+        w = {"geometry": 0.05, "lbp": 0.05, "hog": 0.08, "color": 0.04}.get(s.id, 0.0)
         if w <= 0:
             continue
-        q = 0.55 + 0.45 * quality if s.id == "arcface" else 0.4 + 0.6 * quality
-        num += s.percent * w * q
-        den += w * q
-    return 0.0 if den == 0 else _clamp(num / den, 0.0, 100.0)
+        appearance += s.percent * w
+        den += w
+    appearance = net if den == 0 else appearance / den
+    q = 0.7 + 0.3 * quality
+    ensemble = (0.82 * net + 0.18 * appearance) * q + net * (1 - q)
+    if net < 42:
+        ensemble = min(ensemble, net + 6)
+    if net >= 78:
+        ensemble = max(ensemble, net - 6)
+    return _clamp(ensemble, 0.0, 100.0)
 
 
 def decide(percent: float) -> str:
