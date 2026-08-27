@@ -1,0 +1,272 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1A000000000000000000030 /* StrataIdentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A000000000000000000020 /* StrataIdentApp.swift */; };
+		A1A000000000000000000031 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A000000000000000000021 /* Models.swift */; };
+		A1A000000000000000000032 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A000000000000000000022 /* Workspace.swift */; };
+		A1A000000000000000000033 /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A000000000000000000023 /* FrameExtractor.swift */; };
+		A1A000000000000000000034 /* VisionPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A000000000000000000024 /* VisionPipeline.swift */; };
+		A1A000000000000000000035 /* Strategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A000000000000000000025 /* Strategies.swift */; };
+		A1A000000000000000000036 /* WorkbenchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A000000000000000000026 /* WorkbenchView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1A000000000000000000020 /* StrataIdentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrataIdentApp.swift; sourceTree = "<group>"; };
+		A1A000000000000000000021 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A1A000000000000000000022 /* Workspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		A1A000000000000000000023 /* FrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
+		A1A000000000000000000024 /* VisionPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionPipeline.swift; sourceTree = "<group>"; };
+		A1A000000000000000000025 /* Strategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategies.swift; sourceTree = "<group>"; };
+		A1A000000000000000000026 /* WorkbenchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbenchView.swift; sourceTree = "<group>"; };
+		A1A000000000000000000027 /* StrataIdent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrataIdent.entitlements; sourceTree = "<group>"; };
+		A1A000000000000000000050 /* StrataIdent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrataIdent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1A000000000000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1A000000000000000000010 = {
+			isa = PBXGroup;
+			children = (
+				A1A000000000000000000012 /* StrataIdent */,
+				A1A000000000000000000011 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1A000000000000000000011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1A000000000000000000050 /* StrataIdent.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1A000000000000000000012 /* StrataIdent */ = {
+			isa = PBXGroup;
+			children = (
+				A1A000000000000000000020 /* StrataIdentApp.swift */,
+				A1A000000000000000000021 /* Models.swift */,
+				A1A000000000000000000022 /* Workspace.swift */,
+				A1A000000000000000000027 /* StrataIdent.entitlements */,
+				A1A000000000000000000013 /* Engine */,
+				A1A000000000000000000014 /* Views */,
+			);
+			path = StrataIdent;
+			sourceTree = "<group>";
+		};
+		A1A000000000000000000013 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				A1A000000000000000000023 /* FrameExtractor.swift */,
+				A1A000000000000000000024 /* VisionPipeline.swift */,
+				A1A000000000000000000025 /* Strategies.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		A1A000000000000000000014 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1A000000000000000000026 /* WorkbenchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1A000000000000000000002 /* StrataIdent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1A000000000000000000041 /* Build configuration list for PBXNativeTarget "StrataIdent" */;
+			buildPhases = (
+				A1A000000000000000000003 /* Sources */,
+				A1A000000000000000000004 /* Frameworks */,
+				A1A000000000000000000005 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrataIdent;
+			productName = StrataIdent;
+			productReference = A1A000000000000000000050 /* StrataIdent.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1A000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					A1A000000000000000000002 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = A1A000000000000000000040 /* Build configuration list for PBXProject "StrataIdent" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = de;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				Base,
+			);
+			mainGroup = A1A000000000000000000010;
+			productRefGroup = A1A000000000000000000011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1A000000000000000000002 /* StrataIdent */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1A000000000000000000005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1A000000000000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A000000000000000000030 /* StrataIdentApp.swift in Sources */,
+				A1A000000000000000000031 /* Models.swift in Sources */,
+				A1A000000000000000000032 /* Workspace.swift in Sources */,
+				A1A000000000000000000033 /* FrameExtractor.swift in Sources */,
+				A1A000000000000000000034 /* VisionPipeline.swift in Sources */,
+				A1A000000000000000000035 /* Strategies.swift in Sources */,
+				A1A000000000000000000036 /* WorkbenchView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1A000000000000000000042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1A000000000000000000043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A1A000000000000000000044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StrataIdent/StrataIdent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Strata;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "MIT";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Strata liest Fotos und Videos, um Gesichter zu erkennen.";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.strata.ident;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1A000000000000000000045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StrataIdent/StrataIdent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Strata;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "MIT";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Strata liest Fotos und Videos, um Gesichter zu erkennen.";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.strata.ident;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1A000000000000000000040 /* Build configuration list for PBXProject "StrataIdent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1A000000000000000000042 /* Debug */,
+				A1A000000000000000000043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1A000000000000000000041 /* Build configuration list for PBXNativeTarget "StrataIdent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1A000000000000000000044 /* Debug */,
+				A1A000000000000000000045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1A000000000000000000001 /* Project object */;
+}
