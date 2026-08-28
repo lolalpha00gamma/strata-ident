@@ -18,10 +18,10 @@ enum VisionPipeline {
         for obs in faceReq.results ?? [] {
             let bb = obs.boundingBox
             let box = Box(
-                x: bb.minX * Double(image.width),
-                y: (1 - bb.minY - bb.height) * Double(image.height),
-                width: bb.width * Double(image.width),
-                height: bb.height * Double(image.height)
+                x: Double(bb.minX) * Double(image.width),
+                y: (1 - Double(bb.minY) - Double(bb.height)) * Double(image.height),
+                width: Double(bb.width) * Double(image.width),
+                height: Double(bb.height) * Double(image.height)
             )
             var pts: [CGPoint] = []
             if let lm = obs.landmarks {
@@ -32,8 +32,8 @@ enum VisionPipeline {
                 for region in regions {
                     guard let region else { continue }
                     for p in region.normalizedPoints {
-                        let x = (bb.minX + Double(p.x) * bb.width) * Double(image.width)
-                        let y = (1 - (bb.minY + Double(p.y) * bb.height)) * Double(image.height)
+                        let x = (Double(bb.minX) + Double(p.x) * Double(bb.width)) * Double(image.width)
+                        let y = (1 - (Double(bb.minY) + Double(p.y) * Double(bb.height))) * Double(image.height)
                         pts.append(CGPoint(x: x, y: y))
                     }
                 }

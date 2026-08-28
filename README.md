@@ -1,5 +1,15 @@
 # Strata Ident
 
+**Download für macOS:** [StrataIdent.dmg](https://github.com/lolalpha00gamma/strata-ident/releases/latest/download/StrataIdent.dmg)
+
+Die Datei liegt auch direkt im Repo unter [`dist/StrataIdent.dmg`](./dist/StrataIdent.dmg).
+
+1. DMG öffnen, **StrataIdent** in Programme ziehen.
+2. Einmal **Rechtsklick → Öffnen** (unsigniert, kein App Store).
+3. Fotos und Videos importieren oder per Drag-and-Drop. Frames aus Videos, Gesichter mit Prozent je Strate.
+
+---
+
 Nativer **macOS-Gesichtsscanner**. Extrahiert Frames aus Videos, erkennt Gesichter auf Fotos und Frames, und gibt **je Erkennungsstrate einen Match in Prozent**.
 
 Ziel des Experiments: Apples Personen-Erkennung (Fotos) in Genauigkeit schlagen — schneller im Scan, nachvollziehbarer in der Entscheidung.

@@ -4,14 +4,12 @@ import CoreGraphics
 enum Strategies {
     static func geometry(from points: [CGPoint]) -> [Double] {
         guard !points.isEmpty else { return [] }
-        let cx = points.map(\.x).reduce(0, +) / Double(points.count)
-        let cy = points.map(\.y).reduce(0, +) / Double(points.count)
-        let minX = points.map(\.x).min() ?? 0
-        let maxX = points.map(\.x).max() ?? 1
-        let minY = points.map(\.y).min() ?? 0
-        let maxY = points.map(\.y).max() ?? 1
-        let scale = max(hypot(maxX - minX, maxY - minY), 1)
-        return points.flatMap { [($0.x - cx) / scale, ($0.y - cy) / scale] }
+        let xs = points.map { Double($0.x) }
+        let ys = points.map { Double($0.y) }
+        let cx = xs.reduce(0, +) / Double(xs.count)
+        let cy = ys.reduce(0, +) / Double(ys.count)
+        let scale = max(hypot((xs.max() ?? 1) - (xs.min() ?? 0), (ys.max() ?? 1) - (ys.min() ?? 0)), 1)
+        return zip(xs, ys).flatMap { [($0 - cx) / scale, ($1 - cy) / scale] }
     }
 
     static func lbp(_ pixels: [UInt8], width: Int, height: Int) -> [Double] {
