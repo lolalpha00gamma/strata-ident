@@ -22,7 +22,7 @@ jobs:
           set -euo pipefail
           xcodebuild \
             -project macos/StrataIdent.xcodeproj \
-            -target StrataIdent \
+            -scheme StrataIdent \
             -configuration Release \
             -derivedDataPath DerivedData \
             CODE_SIGN_IDENTITY="-" \
