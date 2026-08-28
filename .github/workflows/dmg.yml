@@ -6,7 +6,6 @@ on:
     paths-ignore:
       - "dist/**"
       - "*.dmg"
-      - "README.md"
   workflow_dispatch:
 
 permissions:
@@ -41,14 +40,13 @@ jobs:
           ditto "$APP" dist/stage/StrataIdent.app
           codesign --force --deep --sign - dist/stage/StrataIdent.app || true
           ln -s /Applications dist/stage/Applications
-          cat > dist/stage/LIESMICH.txt << 'TXT'
-Strata Ident — macOS Gesichtsscanner
-
-1. StrataIdent in den Ordner Programme ziehen.
-2. Einmal: Rechtsklick auf StrataIdent → Öffnen
-   (Gatekeeper, weil die App nicht mit einem Apple-Developer-Zertifikat signiert ist)
-3. Fotos und Videos per Import oder Drag-and-Drop.
-TXT
+          printf '%s\n' \
+            "Strata Ident — macOS Gesichtsscanner" \
+            "" \
+            "1. StrataIdent in den Ordner Programme ziehen." \
+            "2. Einmal: Rechtsklick auf StrataIdent, dann Oeffnen." \
+            "3. Fotos und Videos per Import oder Drag-and-Drop." \
+            > dist/stage/LIESMICH.txt
           hdiutil create \
             -volname "Strata Ident" \
             -srcfolder dist/stage \
@@ -68,7 +66,7 @@ TXT
         run: |
           set -euo pipefail
           TAG="v1.0.1"
-          NOTES="macOS-App als Disk-Image. Rechtsklick → Öffnen, dann in Programme ziehen."
+          NOTES="macOS-App als Disk-Image. Rechtsklick, dann Oeffnen. Danach in Programme ziehen."
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" dist/StrataIdent.dmg --clobber
           else
@@ -76,8 +74,6 @@ TXT
           fi
 
       - name: Commit DMG into the repo
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -87,5 +83,5 @@ TXT
             echo "no dmg change"
             exit 0
           fi
-          git commit -m "StrataIdent.dmg für macOS"
+          git commit -m "StrataIdent.dmg fuer macOS"
           git push
